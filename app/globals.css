@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap");
+
+body {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 215 32% 27%;
+    --foreground: 217 91% 60%;
+    --card: 215 32% 27%;
+    --card-foreground: 217 91% 60%;
+    --popover: 215 32% 27%;
+    --popover-foreground: 217 91% 60%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 215 32% 27%;
+    --secondary: 221 83% 53%;
+    --secondary-foreground: 217 91% 60%;
+    --muted: 221 83% 53%;
+    --muted-foreground: 217 91% 60%;
+    --accent: 221 83% 53%;
+    --accent-foreground: 217 91% 60%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 215 32% 27%;
+    --border: 217 91% 60%;
+    --input: 217 91% 60%;
+    --ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+/* Custom styles for Leaflet popup */
+.leaflet-popup-content-wrapper {
+  background: rgba(30, 41, 59, 0.9);
+  color: #60a5fa;
+  border-radius: 0;
+  padding: 10px;
+  border: 1px solid #60a5fa;
+}
+
+.leaflet-popup-tip {
+  background: #60a5fa;
+}
+
+/* Glowing effect for title */
+@keyframes glow {
+  0%,
+  100% {
+    text-shadow: 0 0 5px #60a5fa, 0 0 10px #60a5fa, 0 0 15px #60a5fa, 0 0 20px #60a5fa, 0 0 35px #60a5fa, 0 0 40px
+      #60a5fa, 0 0 50px #60a5fa, 0 0 75px #60a5fa;
+  }
+  50% {
+    text-shadow: 0 0 2px #60a5fa, 0 0 5px #60a5fa, 0 0 7px #60a5fa, 0 0 10px #60a5fa, 0 0 17px #60a5fa, 0 0 20px #60a5fa,
+      0 0 25px #60a5fa, 0 0 37px #60a5fa;
+  }
+}
+
+.glow-text {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
